@@ -1,3 +1,5 @@
+import { Broker } from "./broker.js"
+
 export enum AgentTypes {
 	JOB = "job",
 	MACHINE = "machine",
@@ -6,7 +8,7 @@ export enum AgentTypes {
 export class Agent {
 	id: number
 	type: AgentTypes
-	broker: any
+	broker: Broker
 	messagesSent: number = 0
 	messagesReceived: number = 0
 	debug: boolean = false
@@ -17,8 +19,9 @@ export class Agent {
 		this.debug = debug
 	}
 
-	connectToBroker(broker: any) {
-		// TODO: connect to broker
+	connectToBroker(broker: Broker) {
+		broker.connect(this)
+		this.broker = broker
 		this.messagesSent += 1
 		this.messagesReceived += 1
 	}

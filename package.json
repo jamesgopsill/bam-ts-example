@@ -4,13 +4,14 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-        "format": "prettier --write .",
+		"format": "prettier --write .",
 		"expt_01": "tsx expts/expt_01.ts"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
-	"devDependencies": {
+	"dependencies": {
+		"prettier": "^3.1.0",
 		"@types/node": "^20.10.3",
 		"tsx": "^4.6.2",
 		"typescript": "^5.3.2"

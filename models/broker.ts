@@ -23,7 +23,7 @@ export class Broker {
 				if (msg.sendAt == GLOBAL_TIME) {
 					if (msg.to == -1) {
 						for (const [_, agent] of Object.entries(
-							this.addressBook[msg.agentType]
+							this.addressBook[msg.agentType],
 						)) {
 							this.messagesSent += 1
 							agent.handleMessage(msg)
@@ -56,7 +56,7 @@ export class Broker {
 		if (book[agent.id]) {
 			if (this.debug)
 				console.log(
-					`#${GLOBAL_TIME} Broker: ${agent.type} ${agent.id} disconnected`
+					`#${GLOBAL_TIME} Broker: ${agent.type} ${agent.id} disconnected`,
 				)
 			delete book[agent.id]
 		}
